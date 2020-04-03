@@ -316,6 +316,10 @@ class Connection implements ConnectionInterface
      * @param  array  $bindings
      * @param  bool  $useReadPdo
      * @return array
+     *
+     * ex: DB::table('table_name')->select('select * from table_name where table_column = ?', ['value_string']);
+     *     DB::table('table_name')->select('select * from table_name where table_column = ?', [value_number]);
+     *     DB::table('table_name')->select('select * from table_name where table_column = :table_column', ['table_column' => 'value']);
      */
     public function select($query, $bindings = [], $useReadPdo = true)
     {
@@ -411,6 +415,7 @@ class Connection implements ConnectionInterface
      * @param  string  $query
      * @param  array  $bindings
      * @return bool
+     * ex: DB::insert('insert into users value(?, ?, ?, ?)', [53, 'name1124', 'email1134', '2020-01-01 10:10:10']);
      */
     public function insert($query, $bindings = [])
     {

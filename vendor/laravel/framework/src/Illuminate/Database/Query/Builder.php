@@ -221,6 +221,7 @@ class Builder
      *
      * @param  array|mixed  $columns
      * @return $this
+     * ex: DB::table('table_name')->select(['table_column1', 'table_column2']);
      */
     public function select($columns = ['*'])
     {
@@ -2647,7 +2648,7 @@ class Builder
      *
      * @param  array  $values
      * @return bool
-     * ex:
+     * ex:DB::table('users')->insert([51, 'name', 'email', 'password', 'password', 'test', 'test', 'test']);
      *
      */
     public function insert(array $values)

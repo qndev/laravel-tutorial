@@ -29,5 +29,7 @@ Route::get('/', function () {
 //Success
 // $users = DB::table('users')->select(['name', 'email'])->get();
 // $users = DB::select('select * from users where id = :id', ['id' => 1]);
-$users = DB::table('users')->insert(['id' => '52', 'name' => 'name11', 'email' => 'email11', 'password' => 'password11']); /// return true or false
+// $users = DB::table('users')->insert(['id' => '52', 'name' => 'name11', 'email' => 'email11', 'password' => 'password11']); // return true or false, id = ['number', number] - pass string number or number => ok
+// insert(string $query, array $bindings = []);
+$users = DB::insert('insert into users value(?, ?, ?, ?, ?, ?, ?, ?)', [53, 'name1124', 'email1134', '2020-01-01 10:10:10', 'password1114', 'test', '2020-01-01 10:10:10', '2020-01-01 10:10:10']);
 dd($users);
