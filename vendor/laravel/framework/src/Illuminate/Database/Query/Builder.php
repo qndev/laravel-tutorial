@@ -2749,6 +2749,7 @@ class Builder
      *
      * @param  array  $values
      * @return int
+     * ex: DB::table('users')->where('id', '=',  1)->update(['name' => 'Quang Nguyen']);
      */
     public function update(array $values)
     {
@@ -2830,6 +2831,7 @@ class Builder
      *
      * @param  mixed  $id
      * @return int
+     * ex: DB::table('users')->delete(3); // delele from table users where id = 3
      */
     public function delete($id = null)
     {

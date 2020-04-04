@@ -427,7 +427,9 @@ class Connection implements ConnectionInterface
      *
      * @param  string  $query
      * @param  array  $bindings
-     * @return int
+     * @return int // (1 -true), (0 - false if request for update with no change value)
+     * ex: DB::update('update users set name = "Dinh Quang" where id = 1');
+     *     DB::update('update users set name = "Dinh Quang" where id = 1');
      */
     public function update($query, $bindings = [])
     {
@@ -440,6 +442,7 @@ class Connection implements ConnectionInterface
      * @param  string  $query
      * @param  array  $bindings
      * @return int
+     * ex: $users = DB::delete('delete from users where id = ?', [13]);
      */
     public function delete($query, $bindings = [])
     {
